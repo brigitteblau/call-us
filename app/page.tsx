@@ -1,10 +1,9 @@
-
-import Link from "next/link";
-import StartButton from "./components/StartButton";
+import Image from "next/image";
+import StartButton from "./landing-components/StartButton";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-start justify-center  px-8">
+       <main className="min-h-screen flex flex-col items-start justify-center  px-8">
       <h1 className="text-6xl font-extrabold tracking-tight leading-tight text-white">
         CALL{' '}
         <span className="text-gradient">US</span>
