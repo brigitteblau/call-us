@@ -1,6 +1,5 @@
 //components/navbar.tsx
 'use client'
-'use client'
 import React from 'react'
 import Link from 'next/link'
 import { SignedOut, SignedIn, useUser, SignOutButton } from '@clerk/nextjs'
@@ -27,15 +26,15 @@ const NavBar = () => {
               />
             </Link>
           )}
-          {/* <SignOutButton>
+          <SignOutButton>
             <button className="text-white border border-white px-4 py-1 rounded-full hover:bg-white hover:text-black transition">
               Sign out
             </button>
-          </SignOutButton> */}
+          </SignOutButton>
         </SignedIn>
 
         <SignedOut>
-          <Link href="/signup" className="text-white border border-white px-4 py-1 rounded-full hover:bg-white hover:text-black transition">
+          <Link href="/auth" className="text-white border border-white px-4 py-1 rounded-full hover:bg-white hover:text-black transition">
             Sign Up
           </Link>
         </SignedOut>

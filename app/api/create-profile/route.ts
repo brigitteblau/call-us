@@ -6,21 +6,21 @@ export async function POST() {
   const clerkUser = await currentUser();
 
   if (!clerkUser) {
-    return NextResponse.json({ error: "Usuario no encontradi" }, { status: 404 });
+    return NextResponse.json({ error: "Usuario no encontrado" }, { status: 404 });
   }
 
   const email = clerkUser.emailAddresses[0]?.emailAddress;
 
   if (!email) {
-    return NextResponse.json({ error: "el user no tiene email" }, { status: 400 });
+    return NextResponse.json({ error: "El usuario no tiene email" }, { status: 400 });
   }
 
   const existingProfile = await prisma.profile.findUnique({
-    where: { userId: clerkUser.id }
+    where: { userId: clerkUser.id },
   });
 
   if (existingProfile) {
-    return NextResponse.json({ message: "ya existe :)" });
+    return NextResponse.json({ message: "Ya existe :)" });
   }
 
   await prisma.profile.create({
@@ -30,5 +30,5 @@ export async function POST() {
     },
   });
 
-  return NextResponse.json({ message: "perfil creado" });
+  return NextResponse.json({ message: "Perfil creado" });
 }
