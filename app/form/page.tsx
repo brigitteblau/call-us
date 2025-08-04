@@ -23,6 +23,7 @@ const initialState = {
 }
 
 export default function FormPage() {
+  const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
   const [data, setData] = useState(initialState)
   const [error, setError] = useState(false)
@@ -44,10 +45,28 @@ export default function FormPage() {
     setStep((prev) => prev - 1)
   }
 
-  const handleSubmit = () => {
-    console.log('Submitted data:', data)
-    alert('Form submitted successfully!')
+ const handleSubmit = async () => {
+  setIsLoading(true)
+  try {
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+
+    if (res.ok) {
+      alert('todo ok (pasar de pagina) o mostrar un modal no se')
+    } else {
+      alert('error')
+    }
+  } catch (error) {
+    console.error(error)
+    alert('Submission failed.')
+  } finally {
+    setIsLoading(false)
   }
+}
+
 
   return (
     <div className="min-h-screen bg-black text-white p-8">

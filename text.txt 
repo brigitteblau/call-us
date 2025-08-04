@@ -1,0 +1,7 @@
+comandos utiles 
+
+siempre tener .env y .env.local lo mismo (del databbase_url)
+
+para prisma: 
+npx prisma generate
+npx prisma db push
