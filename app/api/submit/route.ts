@@ -6,7 +6,7 @@ export async function POST(req) {
      
     try{
 
-        const business = await prisma.bussines.create({ data: body})
+        const business = await prisma.business.create({ data: body})
         return NextResponse.json(business, {status: 201})
     }
     catch(error){
