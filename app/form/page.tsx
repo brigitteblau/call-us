@@ -71,6 +71,7 @@ export default function FormPage() {
   return (
     <div className="min-h-screen bg-black text-white p-8">
       <div className="max-w-xl mx-auto">
+     <h1>Just a few steps to success</h1>
         {step === 0 && <StepOne data={data} onChange={handleChange} onNext={handleNext} error={error} />}
         {step === 1 && <StepTwo data={data} onChange={handleChange} onNext={handleNext} onBack={handleBack} />}
         {step === 2 && <StepThree data={data} onChange={handleChange} onNext={handleNext} onBack={handleBack} />}
