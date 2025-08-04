@@ -1,8 +1,16 @@
 
 'use client'
 import React from 'react'
+import { FormData } from './form';
 
-export default function StepOne({ data, onChange, onNext, error }) {
+interface StepOneProps {
+  data: FormData
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+ => void
+  onNext: () => void
+  error: boolean
+}
+export default function StepOne({ data, onChange, onNext, error }: StepOneProps) {
   return (
     <div className="text-white">
       <h2 className="text-2xl font-bold mb-4 text-[--green-color]">Step 1: Basic Info</h2>

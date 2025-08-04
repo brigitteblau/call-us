@@ -1,7 +1,17 @@
 'use client'
 import React from 'react'
+import { FormData } from './form';
 
-export default function StepFour({ data, onChange, onBack, onSubmit }) {
+interface StepFourProps {
+  data: FormData
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+=> void
+  onBack: () => void
+  onSubmit: () => void
+}
+
+
+export default function StepFour({ data, onChange, onBack, onSubmit }: StepFourProps) {
 
     const [isLoading, setIsLoading] = useState(false)
   

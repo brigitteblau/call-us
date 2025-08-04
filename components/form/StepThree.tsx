@@ -1,7 +1,15 @@
 'use client'
 import React from 'react'
+import { FormData } from './form';
+interface StepThreeProps {
+  data: FormData
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)
+ => void
+  onNext: () => void
+  onBack: () => void
+}
 
-export default function StepThree({ data, onChange, onNext, onBack }) {
+export default function StepThree({ data, onChange, onNext, onBack }: StepThreeProps) {
   return (
     <div className="text-white">
       <h2 className="text-2xl font-bold mb-4 text-[--green-color]">Step 3: Online Presence</h2>

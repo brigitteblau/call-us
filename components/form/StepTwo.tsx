@@ -1,7 +1,15 @@
 'use client'
 import React from 'react'
+import { FormData } from './form';
 
-export default function StepTwo({ data, onChange, onNext, onBack }) {
+interface StepTwoProps {
+  data: FormData
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  onNext: () => void
+  onBack: () => void
+}
+
+export default function StepTwo({ data, onChange, onNext, onBack }: StepTwoProps) {
   return (
     <div className="text-white">
       <h2 className="text-2xl font-bold mb-4 text-[--green-color]">Step 2: Contact & Location</h2>
