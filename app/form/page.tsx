@@ -28,9 +28,10 @@ export default function FormPage() {
   const [data, setData] = useState(initialState)
   const [error, setError] = useState(false)
 
-  const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value })
-  }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setData({ ...data, [e.target.name]: e.target.value })
+}
+
 
   const handleNext = () => {
     if (step === 0 && (!data.name || !data.description)) {
