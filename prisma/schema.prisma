@@ -20,3 +20,21 @@ model Profile {
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 } 
+model Business {
+  id                String   @id @default(cuid())
+  name              String
+  description       String
+  businessHours     String?
+  address           String?
+  phone             String?
+  whatsapp          String?
+  email             String
+  website           String?
+  socialMedia       String?
+  mainServices      String
+  faqs              String?
+  moreQuestions     String?
+  humanAgentResponse String
+  promotion         String?
+  createdAt         DateTime @default(now())
+}
