@@ -37,4 +37,5 @@ model Business {
 
   profileId          String
   profile            Profile  @relation(fields: [profileId], references: [id])
+  
 }

@@ -20,7 +20,7 @@ export async function POST() {
   });
 
   if (existingProfile) {
-    return NextResponse.json({ message: "Ya existe :)" });
+    return NextResponse.json({ message: "Ya existe )" });
   }
 
   await prisma.profile.create({
