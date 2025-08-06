@@ -1,10 +1,11 @@
+//form
 'use client'
 import React, { useState } from 'react'
 import StepOne from '@/components/form/StepOne'
 import StepTwo from '@/components/form/StepTwo'
 import StepThree from '@/components/form/StepThree'
 import StepFour from '@/components/form/StepFour'
-
+import { useRouter } from 'next/navigation';
 const initialState = {
   name: '',
   description: '',
@@ -27,7 +28,8 @@ export default function FormPage() {
   const [step, setStep] = useState(0)
   const [data, setData] = useState(initialState)
   const [error, setError] = useState(false)
-
+  
+  const router= useRouter()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   setData({ ...data, [e.target.name]: e.target.value })
 }
@@ -56,7 +58,8 @@ export default function FormPage() {
     })
 
     if (res.ok) {
-      alert('todo ok (pasar de pagina) o mostrar un modal no se')
+       sessionStorage.setItem('businessName', data.name) 
+   router.push('/demo')
     } else {
       alert('error')
     }

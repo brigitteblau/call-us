@@ -26,6 +26,12 @@ export default async function DashboardPage() {
             <p className="text-sm text-gray-600">Look at the call results</p>
           </div>
         </Link>
+          <Link href="/demo">
+          <div className="bg-white rounded-xl shadow p-6 hover:bg-gray-100 transition cursor-pointer">
+            <h2 className="text-xl text-black  font-semibold mb-2">go to demo</h2>
+            <p className="text-sm text-gray-600">try your ai agents right now</p>
+          </div>
+        </Link>
       </div>
     </div>
   )
