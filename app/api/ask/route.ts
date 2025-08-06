@@ -49,6 +49,8 @@ export async function POST(req: Request) {
     })
 
     const data = await res.json()
+console.log('Respuesta completa de OpenAI:', data) // ⚠️ Agregá esto
+
     const answer = data.choices?.[0]?.message?.content
 
     return NextResponse.json({ answer })

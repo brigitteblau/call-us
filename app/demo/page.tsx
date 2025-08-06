@@ -11,9 +11,10 @@ export default function DemoPage() {
 
   useEffect(() => {
     const fetchBusinesses = async () => {
-      const res = await fetch('/api/businesses')
+   const res = await fetch('/api/business')
       const data = await res.json()
       setBusinesses(data)
+      console.log(data.lenght)
     }
 
     fetchBusinesses()
@@ -35,6 +36,7 @@ export default function DemoPage() {
 
       const data = await res.json()
       setResponse(data.answer)
+      console.log(data.answer)
     } catch (err) {
       console.error(err)
       setResponse('Ocurrió un error al consultar la IA.')
@@ -71,18 +73,18 @@ export default function DemoPage() {
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
               className="border-3 border-solid rounded-3xl w-full p-3 text-white"
-              placeholder="Escribí tu pregunta..."
+              placeholder="Ask a question..."
             />
             <button
               onClick={handleAsk}
               disabled={isLoading}
               className="mt-4 bg-white text-black px-4 py-2 rounded hover:bg-gray-300"
             >
-              {isLoading ? 'Pensando...' : 'Preguntar'}
+              {isLoading ? 'Thinking...' : 'You can ask'}
             </button>
             {response && (
               <div className="mt-6 bg-gray-800 p-4 rounded">
-                <p>{response}</p>
+                <p>{response || 'no hay' }</p>
               </div>
             )}
           </>
